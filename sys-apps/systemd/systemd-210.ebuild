@@ -103,6 +103,7 @@ src_prepare() {
 		echo 'EXTRA_DIST =' > docs/gtk-doc.make
 	fi
 
+	epatch "${FILESDIR}"/210-0001-fix-detection-of-missing-loginuid.patch
 	# Bug 463376
 	sed -i -e 's/GROUP="dialout"/GROUP="uucp"/' rules/*.rules || die
 
